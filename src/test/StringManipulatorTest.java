@@ -70,7 +70,12 @@ public class StringManipulatorTest {
       assertEquals(5, stringManipulator.findSubstringIndex("java coding", "coding"));
       assertEquals(-1, stringManipulator.findSubstringIndex("java coding", "aaaaaa"));
    }
-
+   
+   @Test
+    public void testReverseWords() {
+      assertEquals("You Are How World Hello",stringManipulator.reverseWords("Hello World How Are You"));
+    } 
+   
    @Test(timeout = 1000)
    public void testReverseWithTimeout() {
       assertEquals("oaml", stringManipulator.reverse("lmao"));
