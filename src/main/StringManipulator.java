@@ -102,12 +102,11 @@ public class StringManipulator {
     // Input: "Hello World How Are You" => Output: "You Are How World Hello"
     public String reverseWords(String sentence) {
         String returnString = "";
-        int lastSpaceIndex = sentence.length() - 1;
-        for (int i = sentence.length() - 1; i >= 0; i--) {
-            char c = sentence.charAt(i);
-            if (Character.isWhitespace(c)) {
-                returnString += sentence.substring(i + 1, lastSpaceIndex);
-                lastSpaceIndex = i - 1;
+        String[] arr = sentence.split(" ");
+        for (int i = arr.length-1;i>=0;i--){
+            returnString += arr[i];
+            if (i != 0){
+                returnString += " ";
             }
         }
         return returnString;
